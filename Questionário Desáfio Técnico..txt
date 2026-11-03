@@ -1,0 +1,110 @@
+Questionário Desáfio Técnico.
+
+Questão 1: Qual é o principal objetivo da análise de risco no processo de teste?
+Identificar e priorizar as áreas mais críticas do sistema e os cenários com maior probabilidade de falha ou impacto financeiro/operacional, direcionando o esforço de teste onde o negócio mais precisa.
+
+Questão 2: O que é um teste baseado em requisitos? Cite exemplos.
+É a validação do software feita diretamente com base na especificação funcional ou nas Histórias de Usuário acordadas.
+
+Exemplos: Testar se um campo de cadastro recusa e-mails inválidos conforme especificado ou se o botão de finalizar compra desconta o valor exato do carrinho.
+
+Questão 3: O que é um teste unitário e quem os realiza? Cite exemplos.
+Testes focados na menor parte isolada do código. São realizados pelos Desenvolvedores.
+
+Exemplos: Testar uma função matemática que calcula o desconto em um produto para garantir que o resultado retornado é o esperado.
+
+Questão 4: O que é um teste de Integração e quem os realiza? Cite exemplos.
+Testa a comunicação entre diferentes módulos, microsserviços ou APIs. Realizado por DEVs e QAs.
+
+Exemplos: Validar se os dados informados no cadastro pelo sistema estão populando as tabelas corretamente no banco de dados.
+
+Questão 5: Testes de Performance para app web (20 milhões de entregas/dia). Conceitos e Tipos?
+Conceitos: Carga (usuários simultâneos), Estresse (limite máximo antes da falha), Latência e Escalabilidade.
+
+Tipos:
+Teste de Carga: Simular o volume diário esperado para garantir o tempo de resposta aceitável.
+Teste de Estresse: Elevar o tráfego acima de 20 milhões para identificar onde o sistema gargala ou cai.
+
+Questão 6: O que é CI e CD? Exemplos práticos aplicados ao QA.
+CI (Integração Contínua): Fusão frequente de código com execução automática de testes.
+CD (Entrega/Deploy Contínuo): Automatização do empacotamento e envio do software para ambientes.
+Exemplo no QA: Em cada Pull Request (PR), o pipeline roda automaticamente a suíte de testes automatizados (ex: Playwright), bloqueando o merge se houver falhas.
+
+Questão 7: Qual tipo de teste foca no comportamento interno do software?
+Teste de Caixa Branca.
+
+Questão 8: Qual tipo de teste foca no comportamento externo do software?
+Teste de Caixa Preta.
+
+Questão 9: Cite a importância dos testes Exploratórios.
+Permitem aprendizado simultâneo e criatividade, ajudando a encontrar bugs complexos e imprevisíveis que roteiros de testes rígidos não cobrem.
+
+Questão 10: Quais são os benefícios de termos uma automação de testes funcionais?
+Rapidez na execução de regressões, feedback rápido para o time e liberação do QA para focar em cenários exploratórios e complexos.
+
+Questão 11: Em qual etapa do projeto o QA deve ser envolvido?
+Desde o início, participando do refinamento de requisitos e do planejamento para prevenir defeitos antes mesmo do código ser escrito (Conceito Shift Left)
+
+Questão 12: Como manter um trabalho ágil como um todo?
+Garantindo comunicação transparente entre o time, alinhamento contínuo nas cerimonias ágeis e feedback rápido sobre impedimentos.
+
+Questão 13: Na sua visão, a Qualidade do Software é uma responsabilidade apenas do QA? Justifique.
+Não. A qualidade é responsabilidade de todo o time. O QA atua como facilitador e guardião dos processos, mas o desenvolvedor garante a qualidade do código unitário e o PO a clareza das regras de negócio.
+
+Questão 14: Indique uma ou mais formas de executar testes não funcionais, e explique a importância dos mesmos.
+Formas: Testes de carga com JMeter e varreduras de segurança com OWASP ZAP.
+Importância: Garantem que o sistema seja rápido, seguro e estável sob estresse, e não apenas funcionalmente correto.
+
+Questão 15: Indique maneiras de dar visibilidade das tarefas do QA pro time como um todo.
+Atualização constante das demandas (Jira/Trello), relatórios claros de status de testes nas dailies e métricas de qualidade compartilhadas nas retros.
+
+Questão 16: De um modo geral, explique as vantagens dos testes manuais e dos automatizados.
+Manuais: Flexibilidade e olhar crítico humano. Ideal para testes exploratórios ou features novas.
+Automatizados: Velocidade e consistência. Ideal para suítes de regressão repetitivas (Regressão e E2E).
+
+Questão 17: Na sua visão, o que a IA pode colaborar para os testes de software? Cite exemplos.
+Automatizar tarefas repetitivas e gerar insights.
+Exemplos: Geração automática de massa de dados/cenários a partir de histórias de usuário e autocorreção de seletores em testes automatizados.
+
+Questão 18: Cite exemplos da importância da rastreabilidade nos testes.
+Garantir que cada requisito de negócio tenha ao menos um cenário de teste correspondente, facilitando auditorias e a análise de impacto quando uma regra muda.
+
+Questão 19: Na sua visão, quando os testes são o suficiente?
+Quando os riscos principais foram mitigados, os critérios de aceite foram cumpridos e o orçamento de tempo/recursos alinhado ao negócio foi esgotado.
+
+Questão 20: 2 cenários ruins (DEVs rápidos com 1 QA vs. DEVs entregam tudo no fim da sprint). Qual o pior e como resolver?
+DEVs entregando tudo no fim da sprint, pois estrangula o QA e não compactua com o conceito de Scrum.
+Como resolver: Incentivar entregas em pequenos lotes (Sprints), parcerias em testes unitários e shift-left.
+
+Questão 21: Diferencie teste estático e dinâmico.
+Estático: Análise de código e documentos sem executar o software, por exemplo, code review).
+Dinâmico: Execução real do software para avaliar o comportamento em tempo de execução.
+
+Questão 22: Diferencie teste alfa e beta.
+Alfa: Teste realizado no ambiente do desenvolvedor por usuários internos.
+Beta: Teste realizado por usuários reais no ambiente externo/produção antes do lançamento oficial.
+
+Questão 23: O que é Splunk? Ele pode ser usado por QAs? Se sim, cite exemplos práticos.
+É uma plataforma de monitoramento e análise de logs.
+Sim, QAs usam para inspecionar logs de erro de servidores em tempo real ao investigar falhas encontradas em testes de integração ou estresse.
+
+Questão 24: Cite exemplos de como a AWS (ou serviços de Nuvem) pode ser usada no trabalho do QA.
+Provisionamento rápido de ambientes isolados de teste (Docker/ECS) e execução paralela de pipelines de testes automatizados na nuvem.
+
+Questão 25: Exemplo de linha de comando para execução de Performance.
+JMeter (Via comando): jmeter -n -t teste.jmx -l resultados.jtl
+
+Questão 26: Performance: Indústria de carros vs. Programa de TV com patrocinadores. Qual prioridade?
+Ambos são críticos, mas o programa de TV ao vivo costuma exigir testes de pico extremamente urgentes devido à volatilidade instantânea de milhões de acessos simultâneos. No entanto, se a indústria de carros envolver software embarcado de segurança (freios/direção), a criticidade física de vidas humanas torna-se absoluta.
+
+Questão 27: Estratégia para convencer empresa resistente à automação.
+Começar com um piloto de alto valor e baixo esforço (ex: automatizar o login/checkout), apresentar métricas claras de tempo economizado e demonstrar que a automação acelera os deploys.
+
+Questão 28: O que é teste de confiabilidade?
+Avalia a capacidade do software de manter seu nível de desempenho especificado sob condições específicas ao longo do tempo.
+
+Questão 29: O que é teste de portabilidade?
+Avalia a facilidade com que o software pode ser transferido entre diferentes hardwares, sistemas operacionais ou ambientes. Exemplo: Versão Web e Mobile de um sistema.
+
+Questão 30: O que é teste de segurança?
+Identifica vulnerabilidades e brechas no sistema para prevenir acessos não autorizados e proteger a integridade e privacidade dos dados.

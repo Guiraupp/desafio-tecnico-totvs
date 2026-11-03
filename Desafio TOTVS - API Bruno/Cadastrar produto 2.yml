@@ -1,0 +1,40 @@
+info:
+  name: Cadastrar produto 2
+  type: http
+  seq: 3
+
+http:
+  method: POST
+  url: https://dummyjson.com/products/add
+  headers:
+    - name: Content-Type
+      value: application/json
+  body:
+    type: json
+    data: |-
+      {
+        "title": "AUDI A4"
+      }
+  auth: inherit
+
+runtime:
+  scripts:
+    - type: tests
+      code: |-
+        test("Status code deve ser 200 ou 201", function() {
+          expect(res.status).to.be.oneOf([201]);
+        });
+
+        test("Deve retornar um ID gerado para o produto", function() {
+          const responseBody = res.body;
+          expect(responseBody).to.have.property('id');
+          expect(responseBody.id).to.be.a('number');
+          console.log("ID gerado: " + responseBody.id);
+        });
+
+settings:
+  encodeUrl: true
+  timeout: 0
+  followRedirects: true
+  maxRedirects: 5
+  forwardAuthorizationHeader: false
